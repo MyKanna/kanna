@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+  <context id="context1">
+    <!-- 数据库信息 -->
+    <jdbcConnection connectionURL="jdbc:mysql://127.0.1.1/kanna" 
+    driverClass="com.mysql.jdbc.Driver" 
+    password="abc123456" userId="root" />    
+    
+    
+    <javaModelGenerator targetPackage="org.mykanna.school.entity" targetProject="kanna/src/main/java" />
+    
+  	<sqlMapGenerator targetPackage="org.mykanna.mapper" targetProject="kanna/src/main/resources" />  
+  	
+  	<javaClientGenerator targetPackage="org.mykanna.school.dao" targetProject="kanna/src/main/java" type="XMLMAPPER" />
+
+	<!-- 
+	生成表并且不生成example   
+	tableName:表名
+	domainObjectName:对象名
+	-->
+    <table tableName="tb_user" domainObjectName="User" 
+    enableCountByExample="false" enableUpdateByExample="false" 
+    enableDeleteByExample="false" enableSelectByExample="false" 
+    selectByExampleQueryId="false">
+    </table>  
+    
+  </context>
+</generatorConfiguration>
